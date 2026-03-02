@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preet Sketches | Unleash the Hero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        :root {
+            --primary-red: #e62429;
+            --dark-blue: #021928;
+            --deep-black: #0a0a0a;
+            --silver: #c0c0c0;
+            --glow: 0 0 15px rgba(230, 36, 41, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        body {
+            background-color: var(--deep-black);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        radial-gradient(circle at center, var(--dark-blue) 0%, var(--deep-black) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 5rem;
+            letter-spacing: 4px;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 4px 4px 0px var(--primary-red);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--silver);
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        /* --- GLOWING BUTTON --- */
+        .btn-lets-see {
+            padding: 18px 45px;
+            font-size: 1.8rem;
+            font-family: 'Bangers', cursive;
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: var(--glow);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 36, 41, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(230, 36, 41, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(230, 36, 41, 0); }
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery {
+            padding: 100px 5%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+        }
+
+        .section-title {
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-red);
+            text-transform: uppercase;
+        }
+
+        .sketch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .sketch-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .sketch-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-red);
+            box-shadow: var(--glow);
+        }
+
+        .sketch-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: 0.4s;
+        }
+
+        .sketch-card:hover img {
+            filter: grayscale(0%);
+            scale: 1.05;
+        }
+
+        .card-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .price {
+            color: var(--primary-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: transparent;
+            border: 2px solid var(--primary-red);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about {
+            padding: 80px 10%;
+            background: var(--dark-blue);
+            text-align: center;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        }
+
+        .about p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--silver);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px;
+            text-align: center;
+            background: #000;
+            border-top: 2px solid var(--primary-red);
+        }
+
+        .whatsapp-float {
+            font-family: 'Bangers', cursive;
+            color: #25D366;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1 class="reveal">Unleash the Hero in Art</h1>
+        <p class="reveal">Premium Hand-Drawn Sketches by Preet</p>
+        <button class="btn-lets-see" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">
+            🚀 Let's See
+        </button>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">The Collection</h2>
+        <div class="sketch-grid" id="sketch-container">
+            </div>
+    </section>
+
+    <section class="about">
+        <h2 class="section-title" style="color: white;">The Artist Behind the Ink</h2>
+        <p>I am Preet, a sketch artist dedicated to capturing the raw power and emotion of characters. Every stroke is hand-drawn with precision, blending cinematic vibes with traditional comic-style artistry. My goal is to bring high-quality, premium art to your hands at an accessible price.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Preet Sketches. All Rights Reserved.</p>
+        <br>
+        <a href="https://wa.me/918849943224" class="whatsapp-float">Chat on WhatsApp for Customs</a>
+    </footer>
+
+    <script>
+        // Sketch Data Array (Add your file names here)
+         const sketches = [
+
+            { id: 1, title: "Masked Shadow", img: "sketch1.jpeg.jpeg" },
+
+            { id: 2, title: "Silent Gaze", img: "sketch2.jpeg.jpeg" },
+
+            { id: 3, title: "Urban Rebel", img: "sketch3.jpeg.jpeg" },
+
+            { id: 4, title: "Ponytail Guardian", img: "sketch4.jpeg.jpeg" },
+
+            { id: 5, title: "Glassed Genius", img: "sketch5.jpeg.jpeg" },
+
+            { id: 6, title: "Winter Sparkle", img: "sketch6.jpeg.jpeg" },
+
+            { id: 7, title: "Choker Vibe", img: "sketch7.jpeg.jpeg" },
+
+            { id: 8, title: "Hidden Soul", img: "sketch8.jpeg.jpeg" },
+
+            { id: 9, title: "Kimono Spirit", img: "sketch9.jpeg.jpeg" },
+
+            { id: 10, title: "Umbrella Dragon", img: "sketch10.jpeg.jpeg" }
+
+        ];
+
+        const container = document.getElementById('sketch-container');
+
+        sketches.forEach(sketch => {
+            const card = `
+                <div class="sketch-card reveal">
+                    <img src="${sketch.img}" alt="${sketch.title}">
+                    <div class="card-info">
+                        <h3>${sketch.title}</h3>
+                        <span class="price">₹100</span>
+                        <a href="https://wa.me/918849943224?text=Hi, I want to buy the '${sketch.title}' sketch for ₹100." class="buy-btn">BUY NOW</a>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += card;
+        });
+
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.reveal', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            duration: 1000,
+            interval: 100
+        });
+    </script>
+</body>
+</html>
